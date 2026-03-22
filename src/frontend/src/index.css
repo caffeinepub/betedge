@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --background: 0.115 0.042 240;
+    --foreground: 0.95 0.025 240;
+    --card: 0.175 0.042 235;
+    --card-foreground: 0.95 0.025 240;
+    --popover: 0.195 0.045 235;
+    --popover-foreground: 0.95 0.025 240;
+    --primary: 0.55 0.2 255;
+    --primary-foreground: 0.98 0.01 240;
+    --secondary: 0.27 0.055 235;
+    --secondary-foreground: 0.95 0.025 240;
+    --muted: 0.22 0.05 235;
+    --muted-foreground: 0.72 0.06 235;
+    --accent: 0.55 0.2 255;
+    --accent-foreground: 0.98 0.01 240;
+    --destructive: 0.61 0.18 20;
+    --destructive-foreground: 0.98 0.01 240;
+    --success: 0.73 0.19 150;
+    --success-foreground: 0.15 0.05 150;
+    --border: 0.27 0.055 235;
+    --input: 0.27 0.055 235;
+    --ring: 0.55 0.2 255;
+    --chart-1: 0.55 0.2 255;
+    --chart-2: 0.73 0.19 150;
+    --chart-3: 0.61 0.18 20;
+    --chart-4: 0.75 0.15 55;
+    --chart-5: 0.65 0.15 290;
+    --sidebar: 0.15 0.045 237;
+    --sidebar-foreground: 0.95 0.025 240;
+    --sidebar-primary: 0.55 0.2 255;
+    --sidebar-primary-foreground: 0.98 0.01 240;
+    --sidebar-accent: 0.22 0.05 235;
+    --sidebar-accent-foreground: 0.95 0.025 240;
+    --sidebar-border: 0.27 0.055 235;
+    --sidebar-ring: 0.55 0.2 255;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(
+      180deg,
+      oklch(0.115 0.042 240) 0%,
+      oklch(0.1 0.038 238) 100%
+    );
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-success {
+    color: oklch(var(--success));
+  }
+  .bg-success {
+    background-color: oklch(var(--success));
+  }
+  .text-danger {
+    color: oklch(var(--destructive));
+  }
+  .border-success {
+    border-color: oklch(var(--success));
+  }
+  .glow-blue {
+    box-shadow: 0 0 20px oklch(0.55 0.2 255 / 0.25);
+  }
+  .glow-green {
+    box-shadow: 0 0 20px oklch(0.73 0.19 150 / 0.25);
+  }
+  .card-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.185 0.045 235) 0%,
+      oklch(0.165 0.038 237) 100%
+    );
+  }
+  .header-blur {
+    backdrop-filter: blur(12px);
+    background: oklch(0.13 0.042 238 / 0.92);
+  }
+  .bet-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: oklch(0.73 0.19 150);
+    transition: width 0.6s ease;
+  }
+  .stat-bar-track {
+    height: 6px;
+    border-radius: 3px;
+    background: oklch(0.27 0.055 235);
+    overflow: hidden;
+  }
+  .stat-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(
+      90deg,
+      oklch(0.45 0.19 255) 0%,
+      oklch(0.6 0.21 255) 100%
+    );
+  }
+}
